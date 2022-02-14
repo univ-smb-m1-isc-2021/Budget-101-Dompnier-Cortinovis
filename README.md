@@ -1,8 +1,5 @@
 # Budget-101-Dompnier-Cortinovis
 
-# Budget 101
-
-
 ## But :
 * Réaliser une application de planification et suivie de dépenses
 
