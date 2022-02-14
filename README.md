@@ -4,8 +4,8 @@
 * Réaliser une application de planification et suivie de dépenses
 
 ## Participants:
-* : Cortinovis Enzo
-* : Dompnier Silvio 
+* Cortinovis Enzo
+* Dompnier Silvio 
 
 ## Fonctionnalitées :
 * application multi-utilisateur (s'enregistrer / supprimer son compte)
