@@ -1,45 +1,49 @@
 {
-  "name": "spring-boot-starter-react",
-  "license": "Beerware",
-  "scripts": {
-    "upgrade": "upgrade --latest",
-    "bundle": "parcel build src/main/js/index.js --out-dir target/classes/static/dist --out-file bundle --public-url /dist",
-    "postbundle": "date-now --format='DD.MM.YYYY-HH:mm:ss (A)' | cowthink $1",
-    "watch": "parcel watch src/main/js/index.js --out-dir target/classes/static/dist --out-file bundle --public-url /dist",
-    "postwatch": "date-now --format='DD.MM.YYYY-HH:mm:ss (A)' | cowthink $1"
-  },
+  "name": "notus-react",
+  "version": "1.1.0",
+  "description": "Notus React - A free Tailwind CSS and React UI Kit and Admin by Creative Tim.",
+  "repository": "https://github.com/creativetimofficial/notus-react",
+  "license": "MIT",
   "dependencies": {
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "styled-components": "5.3.3"
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "2.9.1",
+    "@tailwindcss/forms": "0.2.1",
+    "autoprefixer": "10.2.5",
+    "chart.js": "2.9.4",
+    "gulp": "^3.9.1",
+    "gulp-append-prepend": "1.0.8",
+    "postcss": "2.2.19",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "^5.0.0",
+    "tailwindcss": "^2.2.19"
   },
-  "devDependencies": {
-    "autoprefixer": "10.4.2",
-    "babel-core": "6.26.3",
-    "babel-eslint": "10.1.0",
-    "babel-jest": "27.5.1",
-    "babel-plugin-styled-components": "^2.0.6",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-react": "6.24.1",
-    "cowsay": "1.5.0",
-    "cross-env": "7.0.3",
-    "date-now-cli": "2.0.0",
-    "jest": "27.5.1",
-    "jest-create-mock-instance": "2.0.0",
-    "jest-dom": "4.0.0",
-    "jest-junit": "13.0.0",
-    "jest-localstorage-mock": "2.4.19",
-    "node-sass": "7.0.1",
-    "parcel-bundler": "1.12.5"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && gulp licenses",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm start",
+    "build:tailwind": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/main/js/**/*.js"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "coverageDirectory": "target/js-coverage",
-    "setupFiles": [
-      "./src/test/jest/setup-jest.js",
-      "jest-localstorage-mock"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
+  },
+  "optionalDependencies": {
+    "typescript": "4.2.3"
   }
 }
