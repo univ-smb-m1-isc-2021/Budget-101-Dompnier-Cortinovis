@@ -4,7 +4,7 @@
 * Réaliser une application de planification et suivie de dépenses
 
 ## Participants:
-* Cortinovis Enzo
+* Cortinovis Enzo 
 * Dompnier Silvio 
 
 ## Fonctionnalitées :
