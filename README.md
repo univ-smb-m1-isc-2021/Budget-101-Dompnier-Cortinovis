@@ -19,4 +19,5 @@ L'argent de tous ces budgets s'agrègent dans un compte global.
 
 ## Mindmap :
 
+
 ![mindmap](/mindmap/mindmap.png)
