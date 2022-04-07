@@ -1,18 +1,23 @@
 package com.example.budget101;
 
+import com.example.budget101.model.User;;
+import com.example.budget101.repository.UserRepository;
+import com.example.budget101.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.example.budget101.model.HelloWorld;
-import com.example.budget101.service.BusinessService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class Budget101Application implements CommandLineRunner {
-	
+
 	@Autowired
-	private BusinessService bs;
+	private EmployeeService es;
+
+	@Autowired
+	private UserRepository ur;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(Budget101Application.class, args);
@@ -20,9 +25,14 @@ public class Budget101Application implements CommandLineRunner {
 	
 	@Override
     public void run(String... args) throws Exception {
-		HelloWorld hw = bs.getHelloWorld();
 
-		System.out.println(hw);
+//		User u = new User();
+//		u.setEmail("admin@gmail.com");
+//		u.setPassword(new BCryptPasswordEncoder().encode("123"));
+//
+//		ur.save(u);
+
+
     }
 
 }
