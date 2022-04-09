@@ -4,9 +4,6 @@ import React from "react";
 
 import CardLineChart from "components/Cards/CardLineChart.js";
 import CardBarChart from "components/Cards/CardBarChart.js";
-import CardPageVisits from "components/Cards/CardPageVisits.js";
-import CardSocialTraffic from "components/Cards/CardSocialTraffic.js";
-import BudgetCardStats from "components/Cards/BudgetCardStats";
 import CardTable from "components/Cards/CardTable";
 
 export default function Dashboard() {

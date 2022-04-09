@@ -6,7 +6,6 @@ import CardStats from "components/Cards/CardStats.js";
 import BudgetCardStats from "components/Cards/BudgetCardStats.js";
 import CardBarChart from "components/Cards/CardBarChart";
 import CardTable from "components/Cards/CardTable";
-import CardSettings from "components/Cards/CardSettings";
 import CardPageVisits from "components/Cards/CardPageVisits";
 
 export default function HeaderStats() {
@@ -20,13 +19,13 @@ export default function HeaderStats() {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <BudgetCardStats
-                  statSubtitle="Budget total"
+                  statSubtitle="Solde Courant"
                   statTitle="450.00"
                 />
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <BudgetCardStats
-                  statSubtitle="Cotisation mensuelle"
+                  statSubtitle="prélèvements mensuels"
                   statTitle="200.00"
                   statIconName="fas fa-hand-holding-usd"
                   statIconColor="bg-emerald-500"
