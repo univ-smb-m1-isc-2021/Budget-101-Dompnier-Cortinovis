@@ -56,6 +56,9 @@ yarn-error.log*
 
 commit.sh
 
+# fichier mdp
+src/main/resources/application.properties
+
 .pnp.*
 .yarn/*
 !.yarn/patches
