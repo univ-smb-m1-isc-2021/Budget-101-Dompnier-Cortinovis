@@ -55,3 +55,6 @@ yarn-debug.log*
 yarn-error.log*
 
 commit.sh
+
+# fichier mdp
+src/main/resources/application.properties
