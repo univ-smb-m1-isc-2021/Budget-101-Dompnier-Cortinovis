@@ -1,7 +1,7 @@
 package com.example.budget101;
 
 import com.example.budget101.model.Employee;
-import com.example.budget101.model.User;;
+import com.example.budget101.model.User;
 import com.example.budget101.repository.UserRepository;
 import com.example.budget101.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
