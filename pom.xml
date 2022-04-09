@@ -64,6 +64,8 @@
 	</dependencies>
 
 	<build>
+
+		
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -80,7 +82,7 @@
 
 			<!--Yarn plugin -->
 
-			
+
 
 		</plugins>
 
