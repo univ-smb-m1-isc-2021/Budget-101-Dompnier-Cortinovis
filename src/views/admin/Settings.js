@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-import CardNewCagnotte from "components/Cards/CardNewCagnotte.js";
+import CardNewCagnotte from "components/Cards/CardCagnotte.js";
 import CardProfile from "components/Cards/CardProfile.js";
 
 export default function Settings() {

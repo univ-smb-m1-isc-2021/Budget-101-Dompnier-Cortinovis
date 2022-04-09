@@ -5,6 +5,7 @@ import React from "react";
 import CardLineChart from "components/Cards/CardLineChart.js";
 import CardBarChart from "components/Cards/CardBarChart.js";
 import CardTable from "components/Cards/CardTable";
+import Test from "PersonList.js";
 
 export default function Dashboard() {
   return (
@@ -19,6 +20,10 @@ export default function Dashboard() {
         <div className="w-full mb-12 px-4">
           <CardTable/>       {/* Tableau des cagnottes */}
         </div>
+
+        <Test/>
+
+        
       </div>
       {/* <div className="flex flex-wrap mt-4">
         <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">

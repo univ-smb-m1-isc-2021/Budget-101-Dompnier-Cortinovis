@@ -1,5 +1,6 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
+import { Link } from "react-router-dom";
 
 const NotificationDropdown = () => {
   // dropdown props
@@ -35,15 +36,17 @@ const NotificationDropdown = () => {
           "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
         }
       >
+        <Link
+          to="/admin/cagnotte/edit"
+        >
         <a
-          href="#pablo"
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
-          onClick={(e) => e.preventDefault()}
         >
-          Action
+          Modifier
         </a>
+        </Link>
         <a
           href="#pablo"
           className={
@@ -51,7 +54,7 @@ const NotificationDropdown = () => {
           }
           onClick={(e) => e.preventDefault()}
         >
-          Another action
+          Supprimer
         </a>
         <a
           href="#pablo"

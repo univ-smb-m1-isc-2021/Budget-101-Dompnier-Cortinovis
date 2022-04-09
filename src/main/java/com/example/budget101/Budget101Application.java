@@ -33,7 +33,11 @@ public class Budget101Application implements CommandLineRunner {
 //		u.setPassword(new BCryptPasswordEncoder().encode("123"));
 //
 //		ur.save(u);
-
+//		Employee e = new Employee();
+//		e.setFirstName("John");
+//		e.setLastName("Doe");
+//
+//		es.saveEmployee(e);
 
     }
 
