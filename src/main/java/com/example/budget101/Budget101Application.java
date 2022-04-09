@@ -34,6 +34,12 @@ public class Budget101Application implements CommandLineRunner {
 //
 //		ur.save(u);
 
+//		Employee e = new Employee();
+//		e.setFirstName("John");
+//		e.setLastName("Doe");
+//
+//		es.saveEmployee(e);
+
 
     }
 
