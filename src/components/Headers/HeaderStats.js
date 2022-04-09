@@ -20,6 +20,7 @@ export default function HeaderStats() {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <BudgetCardStats
+                  statSubtitle="Budget total"
                   statTitle="450.00"
                 />
               </div>
@@ -34,7 +35,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <BudgetCardStats
                   statSubtitle="Nombre de cagnotte"
-                  statTitle="4"
+                  statTitle="3"
                   statEuro="no"
                   statIconName="fas fa-chart-pie"
                   statIconColor="bg-orange-500"

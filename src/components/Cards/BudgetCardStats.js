@@ -44,7 +44,7 @@ export default function BudgetCardStats({
 }
 
 BudgetCardStats.defaultProps = {
-  statSubtitle: "BUDGET TOTAL",
+  statSubtitle: "CHARGEMENT...",
   statTitle: "???",
   statEuro: "yes",
   statIconName: "fas fa-euro-sign",

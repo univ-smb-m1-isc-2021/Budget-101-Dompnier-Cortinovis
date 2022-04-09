@@ -14,13 +14,13 @@ export default function Dashboard() {
     <>
       <div className="flex flex-wrap mt-4">
         <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-          <CardLineChart />
+          <CardLineChart />  {/* Courbe du solde */}
         </div>
         <div className="w-full xl:w-4/12 px-4">
-          <CardBarChart />
+          <CardBarChart />   {/* Graph des différences */}
         </div>
         <div className="w-full mb-12 px-4">
-          <CardTable/>
+          <CardTable/>       {/* Tableau des cagnottes */}
         </div>
       </div>
       {/* <div className="flex flex-wrap mt-4">
