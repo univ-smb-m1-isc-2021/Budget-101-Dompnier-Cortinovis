@@ -1,5 +1,6 @@
 package com.example.budget101;
 
+import com.example.budget101.model.Employee;
 import com.example.budget101.model.User;;
 import com.example.budget101.repository.UserRepository;
 import com.example.budget101.service.EmployeeService;
@@ -25,6 +26,7 @@ public class Budget101Application implements CommandLineRunner {
 	
 	@Override
     public void run(String... args) throws Exception {
+
 
 //		User u = new User();
 //		u.setEmail("admin@gmail.com");

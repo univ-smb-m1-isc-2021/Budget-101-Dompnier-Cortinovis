@@ -2,12 +2,7 @@ package com.example.budget101.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "User", schema = "public")
@@ -26,12 +21,17 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "budget_id")
+    private Budget budget;
+
     public User() {
     }
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+        this.budget = new Budget();
     }
 
     public Long getId() {
@@ -56,6 +56,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
     }
 
 }
