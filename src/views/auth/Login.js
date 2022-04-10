@@ -32,7 +32,7 @@ export default class Login extends React.Component {
           console.log(res.data);
           // localStorage.setItem("user", JSON.stringify(res.data));
           localStorage.setItem("userId", res.data);  // on store l'id du user dans le localstorage
-          this.props.history.push("/admin/dashboard"); // on redirige vers la page dashboard
+          this.props.history.push("/admin"); // on redirige vers la page dashboard
         }
       })
   }

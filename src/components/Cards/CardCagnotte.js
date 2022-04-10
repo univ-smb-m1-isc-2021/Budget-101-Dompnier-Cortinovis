@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 export default class CardCagnotte extends React.Component {
@@ -24,15 +25,24 @@ export default class CardCagnotte extends React.Component {
     console.log(userId)
     console.log(currentBudgetCagnotte)
 
-
-    axios.get(`http://localhost:8080/addCagnotte?id=` + userId + `&nom=` + nameCagnotte + `&start=` + startCagnotte + `&end=` + endCagnotte + `&montantTT=` + goalBudgetCagnotte + `&montantActuel=` + currentBudgetCagnotte + `&pm=` + monthlyPaymentCagnotte)
-      .then(res => {
-        console.log("GET");
-        console.log(res);
-        console.log(res.data);
-        this.props.history.push("/admin/dashboard"); // on redirige vers la page dashboard
-
-      })
+    if (nameCagnotte != "" && startCagnotte != "" && endCagnotte != "" && goalBudgetCagnotte != "" && currentBudgetCagnotte != "" && monthlyPaymentCagnotte != "") {
+      axios.get(`http://localhost:8080/addCagnotte?id=` + userId + `&nom=` + nameCagnotte + `&start=` + startCagnotte + `&end=` + endCagnotte + `&montantTT=` + goalBudgetCagnotte + `&montantActuel=` + currentBudgetCagnotte + `&pm=` + monthlyPaymentCagnotte)
+        .then(res => {
+          console.log("GET");
+          console.log(res);
+          console.log(res.data);
+          if (res.data.length === 0) {
+            alert("Cagnotte non créée");
+          } else {
+            alert("Cagnotte créée");
+            // on redirige vers la page dashboard
+            this.props.history.push("/admin");
+          }
+        }
+        )
+    }else{
+      alert("Veuillez remplir tous les champs")
+    }
   }
   render() {
 
@@ -132,6 +142,7 @@ export default class CardCagnotte extends React.Component {
                       />
                     </div>
                     <div className="text-center mt-6">
+
                       <button
                         className="text-white bg-emerald-400 active:bg-lightBlue-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mt-4 mx-4 mb-1 ease-linear transition-all duration-150"
                         type="submit"
@@ -139,6 +150,7 @@ export default class CardCagnotte extends React.Component {
                         Créer la Cagnotte
 
                       </button>
+
                     </div>
                   </form>
                 </div>
