@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(String email, String password) {
-        User user = new User(email, new BCryptPasswordEncoder().encode(password));
+        User user = new User(email, password);
         return userRepository.save(user);
     }
 
