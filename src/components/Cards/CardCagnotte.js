@@ -21,7 +21,7 @@ export default function CardCagnotte({
                 <div className="text-center mb-3">
                   <h6 className="text-blueGray-600 text-xl font-bold">
                     {statModification === "yes"
-                      ? "Modifier Cagnotte"
+                      ? "Modifier la Cagnotte"
                       : statModification === "no"
                         ? "Nouvelle Cagnotte"
                         : ""}

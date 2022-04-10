@@ -15,6 +15,7 @@ import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
 import NewCagnotte from "views/admin/NewCagnotte.js";
 import EditCagnotte from "views/admin/EditCagnotte.js";
+import NewDepense from "views/admin/NewDepense.js";
 
 export default function Admin() {
   return (
@@ -30,6 +31,7 @@ export default function Admin() {
             <Route path="/admin/tables" exact component={Tables} />
             <Route path="/admin/cagnotte/new" exact component={NewCagnotte} />
             <Route path="/admin/cagnotte/edit" exact component={EditCagnotte} />
+            <Route path="/admin/depense/new" exact component={NewDepense} />
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           
