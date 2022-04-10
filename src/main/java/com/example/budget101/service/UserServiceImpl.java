@@ -24,4 +24,11 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public User save(String email, String password) {
+        User user = new User(email, password);
+        return userRepository.save(user);
+    }
+
+
 }
