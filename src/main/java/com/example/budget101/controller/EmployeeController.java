@@ -3,6 +3,7 @@ package com.example.budget101.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ public class EmployeeController {
      * Read - Get all employees
      * @return - An Iterable object of Employee full filled
      */
+
     @GetMapping("/employees")
     public Iterable<Employee> getEmployees() {
         return employeeService.getEmployees();

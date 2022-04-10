@@ -9,7 +9,7 @@ export default class PersonList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`localhost:8080/employees`)
+    axios.get(`http://localhost:8080/employees`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
@@ -18,8 +18,8 @@ export default class PersonList extends React.Component {
 
   render() {
     return (
-      <ul>
-        { this.state.persons.map(person => <li>{person.first_name}</li>)}
+      <ul  id="test">
+        { this.state.persons.map(person => <li>{person.firstName}</li>)}
       </ul>
     )
   }
