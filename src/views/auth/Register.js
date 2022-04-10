@@ -1,6 +1,36 @@
 import React from "react";
+import axios from 'axios';
 
-export default function Register() {
+export default class Register extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const {mail, password } = event.target.elements
+    console.log({mail: mail.value, password: password.value })
+    const mailUser = mail.value
+    const mdpUser = password.value
+    console.log("ALEEEEEED");
+    axios.post(`http://localhost:8080/createUser`,{mailUser}, {mdpUser} )
+      .then(res => {
+        console.log("POST");
+        console.log(res);
+        console.log(res.data);
+      })
+  }
+
+
+  render() {
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -14,7 +44,7 @@ export default function Register() {
                   </h6>
                 </div>
                 
-                <form>
+                <form onSubmit={this.handleSubmit}>
               
                   <div className="relative w-full mb-3">
                     <label
@@ -24,7 +54,7 @@ export default function Register() {
                       Email
                     </label>
                     <input
-                      type="email"
+                      type="email" id="mail"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
                     />
@@ -37,8 +67,8 @@ export default function Register() {
                     >
                       Password
                     </label>
-                    <input
-                      type="password"
+                    <input 
+                      type="password" id="password"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
                     />
@@ -51,7 +81,7 @@ export default function Register() {
                   <div className="text-center mt-6">
                     <button
                       className="bg-blueGray-800 text-white mt-6 active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-1/2 ease-linear transition-all duration-150"
-                      type="button"
+                      type="submit"
                     >
                       Créer compte
                     </button>
@@ -64,4 +94,7 @@ export default function Register() {
       </div>
     </>
   );
+  }
 }
+
+
