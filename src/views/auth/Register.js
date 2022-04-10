@@ -21,13 +21,17 @@ export default class Register extends React.Component {
     const mailUser = mail.value
     const mdpUser = password.value
     console.log(mailUser)
-
-    axios.get(`http://localhost:8080/createUser?email=` + mailUser + `&password=` + mdpUser)
-      .then(res => {
-        console.log("GET");
-        console.log(res);
-        console.log(res.data);
-      })
+    if (mailUser != "" && mdpUser != "") {
+      axios.get(`http://localhost:8080/createUser?email=` + mailUser + `&password=` + mdpUser)
+        .then(res => {
+          console.log("GET");
+          console.log(res);
+          console.log(res.data);
+          this.props.history.push("/auth/login"); // on redirige vers la page de connexion
+        })
+    }else{
+      alert("Veuillez remplir tous les champs")
+    }
   }
 
 
