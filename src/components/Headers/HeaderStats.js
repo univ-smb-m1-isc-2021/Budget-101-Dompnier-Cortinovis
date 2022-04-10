@@ -9,6 +9,8 @@ import CardTable from "components/Cards/CardTable";
 import CardPageVisits from "components/Cards/CardPageVisits";
 
 export default function HeaderStats() {
+  // console.log le localStorage
+  console.log("Ceci est l'userId: "+localStorage.getItem("userId"));
   return (
     <>
       {/* Header */}

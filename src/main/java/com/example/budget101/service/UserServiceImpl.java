@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public String connection(String email, String password) {
         User user = null;
-        String mdp = new BCryptPasswordEncoder().encode(password);
         try {
             user = userRepository.findByEmail(email);
         }catch (Exception e){
@@ -38,7 +37,7 @@ public class UserServiceImpl implements UserService {
         }
         if(user == null){
             return "user not found";
-        }else if(!user.getPassword().equals(mdp)){
+        }else if(!user.getPassword().equals(password)){
             return "wrong password";
         }else {
             String id = valueOf(user.getId());
