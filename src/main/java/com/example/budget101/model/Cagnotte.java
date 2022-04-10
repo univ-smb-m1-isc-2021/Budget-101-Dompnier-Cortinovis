@@ -20,11 +20,11 @@ public class Cagnotte implements Serializable {
     @Column(name = "nom")
     private String nom;
 
-//    @Column(name = "start")
-//    private Date start;
-//
-//    @Column(name = "end")
-//    private Date end;
+    @Column(name = "start_date")
+    private Date start_date;
+
+    @Column(name = "end_date")
+    private Date end_date;
 
     @Column(name = "montantTT")
     private Double montantTT;
@@ -35,7 +35,7 @@ public class Cagnotte implements Serializable {
     @Column(name = "prelevementMensuel")
     private Double prelevementMensuel;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_budget")
     private Budget budget;
 
