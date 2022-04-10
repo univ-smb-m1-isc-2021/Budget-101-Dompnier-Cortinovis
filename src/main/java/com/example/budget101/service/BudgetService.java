@@ -2,12 +2,15 @@ package com.example.budget101.service;
 
 import com.example.budget101.model.Budget;
 import com.example.budget101.model.Cagnotte;
+import com.example.budget101.model.User;
 import com.example.budget101.repository.BudgetRepository;
 import com.example.budget101.repository.CagnotteRepository;
+import com.example.budget101.repository.UserRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Optional;
 
 @Data
@@ -18,6 +21,9 @@ public class BudgetService {
 
     @Autowired
     private CagnotteRepository cagnotteRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public Optional<Budget> getBudget(final Long id) {
         return budgetRepository.findById(id);
@@ -63,5 +69,19 @@ public class BudgetService {
             total = total + cagnotte.getMontantTT();
         }
         return total;
+    }
+
+    public Cagnotte addCagnottes(int id, String nom, Date start, Date end, Double montantTT, Double pm) {
+        User user = userRepository.findById(id).get();
+        Budget budget = user.getBudget();
+        Cagnotte cagnotte = new Cagnotte();
+        cagnotte.setBudget(budget);
+        cagnotte.setNom(nom);
+        cagnotte.setStart_date(start);
+        cagnotte.setEnd_date(end);
+        cagnotte.setMontantTT(montantTT);
+        cagnotte.setPrelevementMensuel(pm);
+        cagnotte.setMontantActuel(montantTT);
+        return cagnotteRepository.save(cagnotte);
     }
 }

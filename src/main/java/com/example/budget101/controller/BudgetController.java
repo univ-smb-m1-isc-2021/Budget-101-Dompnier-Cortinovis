@@ -6,6 +6,10 @@ import com.example.budget101.service.BudgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RestController
 public class BudgetController {
 
@@ -30,10 +34,12 @@ public class BudgetController {
         return budgetService.getTotalBudget(id);
     }
 
-    @GetMapping("/addCagnottes")
+    @GetMapping("/addCagnotte")
     @ResponseBody
-    public Iterable<Cagnotte> addCagnottes(@RequestParam final Long id) {
-        return budgetService.getAllCagnoteByBudget(id);
+    public Cagnotte addCagnotte(@RequestParam int id, @RequestParam String nom, @RequestParam String start, @RequestParam String end, @RequestParam Double montantTT, @RequestParam Double pm) throws ParseException {
+        Date startD=new SimpleDateFormat("dd/MM/yyyy").parse(start);
+        Date endD=new SimpleDateFormat("dd/MM/yyyy").parse(end);
+        return budgetService.addCagnottes(id, nom, startD, endD, montantTT, pm);
     }
 
 
