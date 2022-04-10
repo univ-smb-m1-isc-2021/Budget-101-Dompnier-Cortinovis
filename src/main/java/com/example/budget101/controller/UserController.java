@@ -14,8 +14,8 @@ public class UserController {
     private UserServiceImpl userServiceImpl;
 
     @PostMapping("/getUser")
-    public User getUser(String email) {
-        return userServiceImpl.findByEmail(email);
+    public String getUser(String email, String password) {
+        return userServiceImpl.connection(email, password); // user not found - wrong password - connection success
     }
 
     @PostMapping("/createUser")
