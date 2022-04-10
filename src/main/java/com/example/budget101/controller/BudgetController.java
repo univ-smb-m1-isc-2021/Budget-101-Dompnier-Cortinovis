@@ -21,8 +21,8 @@ public class BudgetController {
 
     @GetMapping("/cagnottes")
     @ResponseBody
-    public Iterable<Cagnotte> getCagnottes(@RequestParam int id) {
-        Long idL = Long.valueOf(id);
+    public Iterable<Cagnotte> getCagnottes(@RequestParam String id) {
+        Long idL = parseLong(id);
         return budgetService.getAllCagnoteByBudget(idL);
     }
 
