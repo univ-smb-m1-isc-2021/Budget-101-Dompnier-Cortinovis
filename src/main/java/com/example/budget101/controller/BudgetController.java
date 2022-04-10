@@ -36,10 +36,10 @@ public class BudgetController {
 
     @GetMapping("/addCagnotte")
     @ResponseBody
-    public Cagnotte addCagnotte(@RequestParam int id, @RequestParam String nom, @RequestParam String start, @RequestParam String end, @RequestParam Double montantTT, @RequestParam Double pm) throws ParseException {
+    public Cagnotte addCagnotte(@RequestParam int id, @RequestParam String nom, @RequestParam String start, @RequestParam String end, @RequestParam Double montantTT,@RequestParam Double montantActuel, @RequestParam Double pm) throws ParseException {
         Date startD=new SimpleDateFormat("dd/MM/yyyy").parse(start);
         Date endD=new SimpleDateFormat("dd/MM/yyyy").parse(end);
-        return budgetService.addCagnottes(id, nom, startD, endD, montantTT, pm);
+        return budgetService.addCagnottes(id, nom, startD, endD, montantTT, montantActuel, pm);
     }
 
 

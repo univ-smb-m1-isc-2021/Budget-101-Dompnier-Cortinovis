@@ -71,7 +71,7 @@ public class BudgetService {
         return total;
     }
 
-    public Cagnotte addCagnottes(int id, String nom, Date start, Date end, Double montantTT, Double pm) {
+    public Cagnotte addCagnottes(int id, String nom, Date start, Date end, Double montantTT, Double montantActuel, Double pm) {
         User user = userRepository.findById(id).get();
         Budget budget = user.getBudget();
         Cagnotte cagnotte = new Cagnotte();
@@ -81,7 +81,7 @@ public class BudgetService {
         cagnotte.setEnd_date(end);
         cagnotte.setMontantTT(montantTT);
         cagnotte.setPrelevementMensuel(pm);
-        cagnotte.setMontantActuel(montantTT);
+        cagnotte.setMontantActuel(montantActuel);
         return cagnotteRepository.save(cagnotte);
     }
 }
