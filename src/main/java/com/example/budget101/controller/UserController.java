@@ -12,8 +12,9 @@ public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
-    @PostMapping("/getUser")
-    public String getUser(String email, String password) {
+    @GetMapping("/getUser")
+    @ResponseBody
+    public String getUser(@RequestParam String email,@RequestParam String password) {
         return userServiceImpl.connection(email, password); // user not found - wrong password - connection success
     }
 

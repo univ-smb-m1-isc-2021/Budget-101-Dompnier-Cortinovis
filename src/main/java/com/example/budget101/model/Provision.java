@@ -17,7 +17,7 @@ public class Provision implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_budget")
     private Budget budget;
 

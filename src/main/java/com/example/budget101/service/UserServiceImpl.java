@@ -7,6 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import static java.lang.String.valueOf;
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
@@ -39,7 +41,8 @@ public class UserServiceImpl implements UserService {
         }else if(!user.getPassword().equals(mdp)){
             return "wrong password";
         }else {
-            return "connection success";
+            String id = valueOf(user.getId());
+            return id;
         }
     }
 
