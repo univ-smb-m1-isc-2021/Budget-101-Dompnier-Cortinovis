@@ -11,6 +11,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static java.lang.Long.parseLong;
+
 @RestController
 public class BudgetController {
 
@@ -19,8 +21,9 @@ public class BudgetController {
 
     @GetMapping("/cagnottes")
     @ResponseBody
-    public Iterable<Cagnotte> getCagnottes(@RequestParam final Long id) {
-        return budgetService.getAllCagnoteByBudget(id);
+    public Iterable<Cagnotte> getCagnottes(@RequestParam int id) {
+        Long idL = Long.valueOf(id);
+        return budgetService.getAllCagnoteByBudget(idL);
     }
 
     @GetMapping("/cagnottesTT")
