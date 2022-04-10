@@ -4,8 +4,7 @@ import com.example.budget101.model.User;
 import com.example.budget101.service.UserService;
 import com.example.budget101.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -18,8 +17,9 @@ public class UserController {
         return userServiceImpl.connection(email, password); // user not found - wrong password - connection success
     }
 
-    @PostMapping("/createUser")
-    public User createUser(String email, String password) {
+    @GetMapping("/createUser")
+    @ResponseBody
+    public User createUser(@RequestParam String email, @RequestParam String password) {
         return userServiceImpl.save(email, password);
     }
 

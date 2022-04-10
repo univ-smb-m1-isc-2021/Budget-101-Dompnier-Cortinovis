@@ -20,8 +20,9 @@ export default class Register extends React.Component {
     console.log({mail: mail.value, password: password.value })
     const mailUser = mail.value
     const mdpUser = password.value
-    console.log("ALEEEEEED");
-    axios.post(`http://localhost:8080/createUser`,{mailUser}, {mdpUser} )
+    console.log(mailUser)
+
+    axios.get(`http://localhost:8080/createUser?email=`+ mailUser + `&password=` + mdpUser)
       .then(res => {
         console.log("POST");
         console.log(res);
