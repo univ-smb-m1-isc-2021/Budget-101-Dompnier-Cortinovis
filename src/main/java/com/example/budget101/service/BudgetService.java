@@ -44,7 +44,8 @@ public class BudgetService {
     }
 
     public Iterable<Cagnotte> getAllCagnoteByBudget(final Long id) {
-        return cagnotteRepository.findByBudget(id);
+        User user = userRepository.findById(id).get();
+        return cagnotteRepository.findByBudget(user.getBudget().getId());
     }
 
     public Integer sizeCagnottesByBudget(final Long id) {
