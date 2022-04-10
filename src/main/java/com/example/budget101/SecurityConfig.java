@@ -24,22 +24,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/login*", "/inscription*")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and().formLogin()
-                .permitAll()
-                //.loginPage("/login.html")
-                .defaultSuccessUrl("/welcome")
-                .failureUrl("/login?error=true")
-                .permitAll()
-                .and().logout()
-                .deleteCookies("JSESSIONID")
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/login");
+                .antMatchers("/")
+                .permitAll();
+//                .antMatchers("/", "/login*", "/inscription*")
+//                .permitAll()
+//                .anyRequest()
+//                .authenticated()
+//                .and().formLogin()
+//                .permitAll()
+//                //.loginPage("/login.html")
+//                .defaultSuccessUrl("/welcome")
+//                .failureUrl("/login?error=true")
+//                .permitAll()
+//                .and().logout()
+//                .deleteCookies("JSESSIONID")
+//                .logoutUrl("/logout")
+//                .logoutSuccessUrl("/login");
 
     }
 

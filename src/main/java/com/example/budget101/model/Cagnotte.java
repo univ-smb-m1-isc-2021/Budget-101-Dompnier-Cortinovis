@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Entity
@@ -19,14 +20,20 @@ public class Cagnotte implements Serializable {
     @Column(name = "nom")
     private String nom;
 
+//    @Column(name = "start")
+//    private Date start;
+//
+//    @Column(name = "end")
+//    private Date end;
+
     @Column(name = "montantTT")
     private Double montantTT;
 
     @Column(name = "montantActuel")
     private Double montantActuel;
 
-    @Column(name = "previsionMensuel")
-    private Double previsionMensuel;
+    @Column(name = "prelevementMensuel")
+    private Double prelevementMensuel;
 
     @ManyToOne
     @JoinColumn(name = "id_budget")
