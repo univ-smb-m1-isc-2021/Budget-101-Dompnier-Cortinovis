@@ -21,7 +21,7 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "budget_id")
     private Budget budget;
 
