@@ -29,7 +29,7 @@ ReactDOM.render(
       {/* <Route path="/" exact component={Admin} /> */}
       {/* add redirect for first page */}
       {/* <Redirect from="*" to="/" /> */}
-      <Redirect from="/" to="/admin" />
+      <Redirect from="/" to="/auth" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
