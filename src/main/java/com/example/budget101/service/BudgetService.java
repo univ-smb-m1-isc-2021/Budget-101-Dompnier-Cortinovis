@@ -72,7 +72,8 @@ public class BudgetService {
     }
 
     public Cagnotte addCagnottes(int id, String nom, Date start, Date end, Double montantTT, Double montantActuel, Double pm) {
-        User user = userRepository.findById(id).get();
+        Long idL = (long) id;
+        User user = userRepository.findById(idL).get();
         Budget budget = user.getBudget();
         Cagnotte cagnotte = new Cagnotte();
         cagnotte.setBudget(budget);
