@@ -40,7 +40,7 @@ export default function CardDepensePonctuelle({
                                             type="text"
                                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             placeholder="ex: Vidange"
-                                            value={statName}
+                                            
                                         />
                                     </div>
 
@@ -55,7 +55,7 @@ export default function CardDepensePonctuelle({
                                             type="date"
                                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             placeholder="Email"
-                                            value={statDate}
+                                            
                                         />
                                     </div>
 
@@ -69,7 +69,7 @@ export default function CardDepensePonctuelle({
                                             type="number"
                                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             placeholder="ex: 250€"
-                                            value={statAmount}
+                                            
                                         />
                                     </div>
                                     <div className="text-center mt-6">

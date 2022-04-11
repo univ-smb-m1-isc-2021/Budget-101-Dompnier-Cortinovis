@@ -43,7 +43,8 @@ public class BudgetService {
     }
 
     public Float getTotalCompte(Long id) {
-        Budget b = budgetRepository.getBudgetById(id);
+        User user = userRepository.findById(id).get();
+        Budget b = budgetRepository.getBudgetById(user.getBudget().getId());
         return b.getCompteTT();
     }
 

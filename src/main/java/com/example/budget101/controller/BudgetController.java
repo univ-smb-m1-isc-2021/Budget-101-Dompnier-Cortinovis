@@ -33,7 +33,7 @@ public class BudgetController {
         Double ttc = budgetService.getTotalCagnotteByBudget(id);
         int nbC = budgetService.sizeCagnottesByBudget(id);
         Double ttPm = budgetService.getTotalPm(id);
-        Float compte = budgetService.getTotalCompte(id);
+        Float compte = 0f; //budgetService.getTotalCompte(id);
 
         String res = Double.toString(ttc - ttPm - compte);
         res = res + Integer.toString(nbC);
