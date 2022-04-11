@@ -1,6 +1,7 @@
 package com.example.budget101.controller;
 
 import com.example.budget101.model.Cagnotte;
+import com.example.budget101.model.Depense;
 import com.example.budget101.model.Employee;
 import com.example.budget101.service.BudgetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,5 +64,23 @@ public class BudgetController {
         return budgetService.addCagnottes(id, nom, startD, endD, montantTTD, montantActuelD, pmD);
     }
 
+    @GetMapping("/modifCagnotte")
+    @ResponseBody
+    public Cagnotte modifCagnotte(@RequestParam int id, @RequestParam String nom, @RequestParam String start, @RequestParam String end, @RequestParam String montantTT,@RequestParam String montantActuel, @RequestParam String pm) throws ParseException {
+        Date startD=new SimpleDateFormat("yyyy-MM-dd").parse(start);
+        Date endD=new SimpleDateFormat("yyyy-MM-dd").parse(end);
+        Double montantTTD=Double.parseDouble(montantTT);
+        Double montantActuelD=Double.parseDouble(montantActuel);
+        Double pmD=Double.parseDouble(pm);
+        return budgetService.modifCagnottes(id, nom, startD, endD, montantTTD, montantActuelD, pmD);
+    }
+
+    @GetMapping("/addDepense")
+    @ResponseBody
+    public Depense addDepense(@RequestParam int id, @RequestParam String nom, @RequestParam String montant, @RequestParam String date) throws ParseException {
+        Date startD=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        Double montantD=Double.parseDouble(montant);
+        return budgetService.addDepense(id, nom, montantD, startD);
+    }
 
 }

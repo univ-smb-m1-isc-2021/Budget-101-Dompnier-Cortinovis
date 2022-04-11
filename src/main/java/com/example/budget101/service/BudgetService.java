@@ -2,9 +2,11 @@ package com.example.budget101.service;
 
 import com.example.budget101.model.Budget;
 import com.example.budget101.model.Cagnotte;
+import com.example.budget101.model.Depense;
 import com.example.budget101.model.User;
 import com.example.budget101.repository.BudgetRepository;
 import com.example.budget101.repository.CagnotteRepository;
+import com.example.budget101.repository.DepenseRepository;
 import com.example.budget101.repository.UserRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class BudgetService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private DepenseRepository depenseRepository;
 
     public Optional<Budget> getBudget(final Long id) {
         return budgetRepository.findById(id);
@@ -93,5 +98,35 @@ public class BudgetService {
         cagnotte.setPrelevementMensuel(pm);
         cagnotte.setMontantActuel(montantActuel);
         return cagnotteRepository.save(cagnotte);
+    }
+
+    public Cagnotte modifCagnottes(int id, String nom, Date startD, Date endD, Double montantTTD, Double montantActuelD, Double pmD) {
+        Long idL = (long) id;
+        User user = userRepository.findById(idL).get();
+        Budget budget = user.getBudget();
+        Cagnotte cagnotte = cagnotteRepository.findById(idL).get();
+        cagnotte.setBudget(budget);
+        cagnotte.setNom(nom);
+        cagnotte.setStart_date(startD);
+        cagnotte.setEnd_date(endD);
+        cagnotte.setMontantTT(montantTTD);
+        cagnotte.setPrelevementMensuel(pmD);
+        cagnotte.setMontantActuel(montantActuelD);
+        return cagnotteRepository.save(cagnotte);
+    }
+
+
+    //Function Depense
+
+    public Depense addDepense(int id, String nom, Double montantD, Date startD) {
+        Long idL = (long) id;
+        User user = userRepository.findById(idL).get();
+        Budget budget = user.getBudget();
+        Depense depense = new Depense();
+        depense.setBudget(budget);
+        depense.setNom(nom);
+        depense.setMontant(montantD);
+        depense.setDate(startD);
+        return depenseRepository.save(depense);
     }
 }
