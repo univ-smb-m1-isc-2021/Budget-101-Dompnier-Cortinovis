@@ -12,7 +12,7 @@ export default function FooterAdmin() {
               <div className="text-sm text-blueGray-500 font-semibold py-1 text-center md:text-left">
                 Copyright © {new Date().getFullYear()}{" "}
                 <a
-                  href="https://www.creative-tim.com?ref=nr-footer-admin"
+                  href="https://github.com/univ-smb-m1-isc-2021/Budget-101-Dompnier-Cortinovis"
                   className="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
                 >
                   Dompnier Cortinovis
