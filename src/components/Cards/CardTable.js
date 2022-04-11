@@ -151,43 +151,47 @@ export default class CardTable extends React.Component {
               {cagnottes.map((cagnotte) => {
                 return (
                   <tr>
-              <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                <span
-                  className=
-                  "ml-3 font-bold text-xl text-white"
+                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                      <span
+                        className=
+                        "ml-3 font-bold text-xl text-white"
 
-                >
-                  {cagnotte.nom}
-                </span>
-              </th>
-              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
-                {cagnotte.montantTT}
-              </td>
-              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
-                {cagnotte.montantActuel}
-              </td>
-              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
-                <div className="flex">
-                  {cagnotte.prelevementMensuel}
-                </div>
-              </td>
-              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                <div className="flex items-center">
-                  <span className="mr-2">{Math.round((cagnotte.montantActuel/cagnotte.montantTT)*100)}%</span>
-                  <div className="relative w-full">
-                    <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                      <div
-                        style={{ width : Math.round((cagnotte.montantActuel/cagnotte.montantTT)*100)+'%' }}
-                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-400"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                <TableDropdown />
-              </td>
-            </tr>
+                      >
+                        {cagnotte.nom}
+                      </span>
+                    </th>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
+                      {cagnotte.montantTT}
+                    </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
+                      {cagnotte.montantActuel}
+                    </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
+                      <div className="flex">
+                        {cagnotte.prelevementMensuel}
+                      </div>
+                    </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      <div className="flex items-center">
+                        <span className="mr-2">{Math.round((cagnotte.montantActuel / cagnotte.montantTT) * 100)}%</span>
+                        <div className="relative w-full">
+                          <div className="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
+                            <div
+                              style={{ width: Math.round((cagnotte.montantActuel / cagnotte.montantTT) * 100) + '%' }}
+                              className={"shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-400 " + (Math.round((cagnotte.montantActuel / cagnotte.montantTT) * 100) <= 50
+                                ? "bg-red-500"
+                                : Math.round((cagnotte.montantActuel / cagnotte.montantTT) * 100) <= 70
+                                  ? "bg-orange-500"
+                                  : "bg-green-500")}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                      <TableDropdown />
+                    </td>
+                  </tr>
                 );
               })}
               {/* {this.handleTable()} */}
