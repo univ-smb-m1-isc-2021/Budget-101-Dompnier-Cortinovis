@@ -177,8 +177,8 @@ export default class CardTable extends React.Component {
                   <div className="relative w-full">
                     <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
                       <div
-                        style={{ width: "60%" }}
-                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
+                        style={{ width : Math.round((cagnotte.montantActuel/cagnotte.montantTT)*100)+'%' }}
+                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-400"
                       ></div>
                     </div>
                   </div>
