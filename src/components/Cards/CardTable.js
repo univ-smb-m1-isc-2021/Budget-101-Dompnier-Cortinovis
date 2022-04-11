@@ -31,7 +31,9 @@ export default class CardTable extends React.Component {
         console.log("GET");
         console.log(res);
         console.log(res.data);
-          
+
+      this.setState({value: <div>{res.data.length}</div> });
+          /*
         for (let i = 0; i < res.data.length; i++) {
           console.log("Nom "+i+ res.data[i].nom)
               {<tr>
@@ -76,10 +78,13 @@ export default class CardTable extends React.Component {
           
 
         }
+        */
         
       }
-      )
+    )
   }
+
+
   render() {
     return (
       
@@ -148,7 +153,9 @@ export default class CardTable extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                {this.handleTable()}
+
+                {/*this.handleTable()*/}
+                {this.state.value}
                 {console.log("POUTRE"+this.handleTable())}
               </tbody>
             </table>
