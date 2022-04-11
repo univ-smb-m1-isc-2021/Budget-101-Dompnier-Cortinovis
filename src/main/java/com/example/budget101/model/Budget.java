@@ -21,6 +21,7 @@ public class Budget implements Serializable {
 
 
     public Budget() {
+        this.compteTT = 0f;
     }
 
     public Float getCompteTT() {

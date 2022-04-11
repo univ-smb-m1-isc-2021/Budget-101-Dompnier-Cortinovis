@@ -22,6 +22,4 @@ import static org.hamcrest.CoreMatchers.is;
 @AutoConfigureMockMvc
 class Budget101ApplicationTests {
 
-	
-
 }

@@ -7,6 +7,8 @@ import AdminNavbar from "components/Navbars/AdminNavbar.js";
 
 import HeaderStats from "components/Headers/HeaderStats.js";
 
+import FooterAdmin from "components/Footers/FooterAdmin.js";
+
 
 // views
 
@@ -34,6 +36,7 @@ export default function Admin() {
             <Route path="/admin/depense/new" exact component={NewDepense} />
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
+          <FooterAdmin />
           
         </div>
       </div>
