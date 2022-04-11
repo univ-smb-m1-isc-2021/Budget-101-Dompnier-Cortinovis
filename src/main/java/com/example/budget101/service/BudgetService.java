@@ -64,7 +64,8 @@ public class BudgetService {
 
     public Double getTotalCagnotteByBudget(final Long id) {
         Double total = 0.0;
-        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
+        User user = userRepository.findById(id).get();
+        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(user.getBudget().getId())) {
             total = total + cagnotte.getMontantActuel();
         }
         return total;
@@ -72,7 +73,8 @@ public class BudgetService {
 
     public Double getTotalPm(final Long id) {
         Double total = 0.0;
-        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
+        User user = userRepository.findById(id).get();
+        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(user.getBudget().getId())) {
             total = total + cagnotte.getPrelevementMensuel();
         }
         return total;
