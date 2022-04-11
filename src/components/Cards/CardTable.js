@@ -155,8 +155,8 @@ export default class CardTable extends React.Component {
               <tbody>
 
                 {/*this.handleTable()*/}
-                {this.state.value}
-                {console.log("POUTRE"+this.handleTable())}
+                {/*this.state.value*/}
+                {/*console.log("POUTRE"+this.handleTable())*/}
               </tbody>
             </table>
           </div>
