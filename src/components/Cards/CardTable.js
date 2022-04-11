@@ -118,7 +118,7 @@ export default class CardTable extends React.Component {
                       {cagnotte.montantTT}
                     </td>
                     <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
-                      {Date(cagnotte.end_date).substring(0,16)}
+                      {Date(cagnotte.end_date).substring(0, 16)}
                     </td>
                     <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
                       {cagnotte.montantActuel}
@@ -151,9 +151,6 @@ export default class CardTable extends React.Component {
                   </tr>
                 );
               })}
-              {/* {this.handleTable()} */}
-              {/* { this.setState }
-              { console.log("POUTRE" + this.handleTable())} */}
             </tbody>
           </table>
         </div>
@@ -161,8 +158,5 @@ export default class CardTable extends React.Component {
 
     ) : (<h1>Pas de cagnotte </h1>);
   }
-  // render() {
-  //   return (null );
-  // }
 }
 

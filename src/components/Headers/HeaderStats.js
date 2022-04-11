@@ -15,7 +15,7 @@ export default class HeaderStats extends React.Component {
       widgets: []
     };
   }
-  // console.log("Ceci est l'userId: "+localStorage.getItem("userId"));
+ 
   componentDidMount() {
     const userId = localStorage.getItem('userId')
     console.log(userId)
@@ -30,26 +30,12 @@ export default class HeaderStats extends React.Component {
         console.log(this.state.widgets);
       }
       )
-  //     axios.get(`http://localhost:8080/TotalPm?id=` + userId)
-  //     .then(res => {
-  //       console.log("GET TOTAL PM");
-  //       console.log(res);
-  //       console.log(res.data);
-  //       this.setState({
-  //         budgetTT: res.data,
-  //       });
-  //       console.log(this.state.widgets);
-  //     }
-  //     )
    }
 
   render() {
     const { widgets } = this.state;
-    //const { test2 } = this.state.budgetTT;
     console.log("BDD RENDER TEST")
     console.log(widgets);
-    // console.log("---------")
-    // console.log(test2);
     return (
       <>
         {/* Header */}

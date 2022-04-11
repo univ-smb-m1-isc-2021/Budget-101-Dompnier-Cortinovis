@@ -13,8 +13,6 @@ import Auth from "layouts/Auth.js";
 // views without layouts
 
 
-
-
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -22,10 +20,6 @@ ReactDOM.render(
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />
       {/* add routes without layouts */}
-
-      {/* <Route path="/" exact component={Admin} /> */}
-      {/* add redirect for first page */}
-      {/* <Redirect from="*" to="/" /> */}
       <Redirect from="/" to="/auth" />
     </Switch>
   </BrowserRouter>,
