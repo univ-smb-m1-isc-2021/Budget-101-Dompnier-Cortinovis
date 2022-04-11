@@ -61,13 +61,13 @@ export default class HeaderStats extends React.Component {
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                   <BudgetCardStats
                     statSubtitle="Solde Courant"
-                    statTitle={widgets} 
+                    statTitle={widgets.solde} 
                   />
                 </div>
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                   <BudgetCardStats
                     statSubtitle="prélèvements mensuels"
-                    statTitle="200.00"
+                    statTitle={widgets.prelevement}
                     statIconName="fas fa-hand-holding-usd"
                     statIconColor="bg-emerald-500"
                   />
@@ -75,7 +75,7 @@ export default class HeaderStats extends React.Component {
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                   <BudgetCardStats
                     statSubtitle="Nombre de cagnotte"
-                    statTitle={ widgets }
+                    statTitle={ widgets.nbCagnotte }
                     statEuro="no"
                     statIconName="fas fa-chart-pie"
                     statIconColor="bg-orange-500"
@@ -83,8 +83,8 @@ export default class HeaderStats extends React.Component {
                 </div>
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                   <BudgetCardStats
-                    statSubtitle="Budget en cagnotte"
-                    statTitle="360.00"
+                    statSubtitle={"Budget en cagnotte"}
+                    statTitle={widgets.budgetC}
                     statIconName="fas fa-wallet"
                     statIconColor="bg-pink-500"
                   />
