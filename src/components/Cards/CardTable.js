@@ -16,7 +16,6 @@ export default class CardTable extends React.Component {
   componentDidMount() {
     const userId = localStorage.getItem('userId')
     console.log(userId)
-    //console.log(currentBudgetCagnotte)
 
     axios.get(`http://localhost:8080/cagnottes?id=` + userId)
       .then(res => {
@@ -72,6 +71,13 @@ export default class CardTable extends React.Component {
                   "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700"
 
                 >
+                  Date limite
+                </th>
+                <th
+                  className=
+                  "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700"
+
+                >
                   Budget actuel
                 </th>
                 <th
@@ -110,6 +116,9 @@ export default class CardTable extends React.Component {
                     </th>
                     <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
                       {cagnotte.montantTT}
+                    </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
+                      {Date(cagnotte.end_date).substring(0,16)}
                     </td>
                     <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xl whitespace-nowrap p-4">
                       {cagnotte.montantActuel}

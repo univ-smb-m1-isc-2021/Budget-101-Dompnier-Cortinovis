@@ -6,7 +6,7 @@ import CardStats from "components/Cards/CardStats.js";
 import BudgetCardStats from "components/Cards/BudgetCardStats.js";
 import CardBarChart from "components/Cards/CardBarChart";
 import CardTable from "components/Cards/CardTable";
-import CardPageVisits from "components/Cards/CardPageVisits";
+
 
 export default class HeaderStats extends React.Component {
   constructor(props) {
