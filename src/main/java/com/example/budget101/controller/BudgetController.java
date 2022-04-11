@@ -44,6 +44,12 @@ public class BudgetController {
         return budgetService.getTotalPm(id);
     }
 
+    @GetMapping("/compteBudget")
+    @ResponseBody
+    public Float getCompteBudget(@RequestParam final Long id) {
+        return budgetService.getTotalCompte(id);
+    }
+
 
 
     @GetMapping("/addCagnotte")

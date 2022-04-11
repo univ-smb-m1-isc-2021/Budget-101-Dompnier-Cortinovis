@@ -37,6 +37,11 @@ public class BudgetService {
         return budgetRepository.findAll();
     }
 
+    public Float getTotalCompte(Long id) {
+        Budget b = budgetRepository.getBudgetById(id);
+        return b.getCompteTT();
+    }
+
     //Function Cagnotte
 
     public Cagnotte saveCagnotte(Cagnotte cagnotte) {
@@ -50,7 +55,8 @@ public class BudgetService {
 
     public Integer sizeCagnottesByBudget(final Long id) {
         int size = 0;
-        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
+        User user = userRepository.findById(id).get();
+        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(user.getBudget().getId())) {
             size = size + 1;
         }
         return size;
