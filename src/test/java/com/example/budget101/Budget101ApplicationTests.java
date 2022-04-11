@@ -21,6 +21,11 @@ import static org.hamcrest.CoreMatchers.is;
 @SpringBootTest
 @AutoConfigureMockMvc
 class Budget101ApplicationTests {
+<<<<<<< Updated upstream
 	
+=======
+
+
+>>>>>>> Stashed changes
 
 }

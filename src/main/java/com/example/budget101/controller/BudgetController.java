@@ -32,15 +32,19 @@ public class BudgetController {
         return budgetService.getTotalCagnotteByBudget(id);
     }
 
-    @GetMapping("/budgetCagnottes")
+    @GetMapping("/nbCagnottes")
     @ResponseBody
-    public Double getTotalBudget(@RequestParam final Long id) {
-        return budgetService.getTotalBudget(id);
+    public int getNbCagnottes(@RequestParam final Long id) {
+        return budgetService.sizeCagnottesByBudget(id);
     }
 
-    DateFormat shortDateFormat = DateFormat.getDateTimeInstance(
-            DateFormat.SHORT,
-            DateFormat.SHORT);
+    @GetMapping("/TotalPm")
+    @ResponseBody
+    public Double getTotalPm(@RequestParam final Long id) {
+        return budgetService.getTotalPm(id);
+    }
+
+
 
     @GetMapping("/addCagnotte")
     @ResponseBody

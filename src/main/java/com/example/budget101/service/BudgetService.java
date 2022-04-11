@@ -64,10 +64,10 @@ public class BudgetService {
         return total;
     }
 
-    public Double getTotalBudget(final Long id) {
+    public Double getTotalPm(final Long id) {
         Double total = 0.0;
         for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
-            total = total + cagnotte.getMontantTT();
+            total = total + cagnotte.getPrelevementMensuel();
         }
         return total;
     }
