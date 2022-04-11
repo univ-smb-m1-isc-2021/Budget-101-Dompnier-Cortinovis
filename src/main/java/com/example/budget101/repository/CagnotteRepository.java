@@ -13,7 +13,7 @@ import java.util.Collection;
 @Repository
 public interface CagnotteRepository extends JpaRepository<Cagnotte, Long> {
 
-    ArrayList<Cagnotte> findByBudget(final Long id);
+    ArrayList<Cagnotte> findByBudgetId(final Long id);
 
     ArrayList<Double> findMontantActuelByBudget(final Long id);
 
