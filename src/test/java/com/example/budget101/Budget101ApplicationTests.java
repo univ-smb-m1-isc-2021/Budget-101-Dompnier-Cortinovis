@@ -22,13 +22,6 @@ import static org.hamcrest.CoreMatchers.is;
 @AutoConfigureMockMvc
 class Budget101ApplicationTests {
 
-
-
-	@Test
-	public void testGetCagnottes() throws Exception {
-//		mockMvc.perform(get("/cagnottes"))
-//				.andExpect(status().isOk());
-
-	}
+	
 
 }
