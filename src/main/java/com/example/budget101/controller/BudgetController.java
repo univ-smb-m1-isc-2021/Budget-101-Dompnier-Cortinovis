@@ -35,7 +35,7 @@ public class BudgetController {
         Double ttc = budgetService.getTotalCagnotteByBudget(id);
         int nbC = budgetService.sizeCagnottesByBudget(id);
         Double ttPm = budgetService.getTotalPm(id);
-        Float compte = 0f; //budgetService.getTotalCompte(id);
+        Float compte = budgetService.getTotalCompte(id);
 
         Map<String,String> map = new HashMap<String,String>();
 
