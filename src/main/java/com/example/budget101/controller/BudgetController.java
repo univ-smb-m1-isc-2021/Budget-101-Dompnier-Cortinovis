@@ -11,6 +11,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import static java.lang.Long.parseLong;
 
@@ -29,15 +31,20 @@ public class BudgetController {
 
     @GetMapping("/infoCagnotte")
     @ResponseBody
-    public String getTotalCagnottes(@RequestParam final Long id) {
+    public Map getTotalCagnottes(@RequestParam final Long id) {
         Double ttc = budgetService.getTotalCagnotteByBudget(id);
         int nbC = budgetService.sizeCagnottesByBudget(id);
         Double ttPm = budgetService.getTotalPm(id);
         Float compte = 0f; //budgetService.getTotalCompte(id);
 
-        String res = Double.toString(ttc - ttPm - compte);
-        res = res + Integer.toString(nbC);
-        return res;
+        Map<String,String> map = new HashMap<String,String>();
+
+        map.put("solde", Float.toString(compte));
+        map.put("prelevement", Double.toString(ttPm));
+        map.put("nbCagnotte", Integer.toString(nbC));
+        map.put("budgetC", Double.toString(ttc));
+
+        return map;
     }
 
     @GetMapping("/nbCagnottes")
