@@ -59,7 +59,7 @@ export default class CardDepensePonctuelle extends React.Component {
                                                 Nom
                                             </label>
                                             <input
-                                                type="text"
+                                                type="text" name="text"
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 placeholder="ex: Vidange"
                                             />
@@ -72,7 +72,7 @@ export default class CardDepensePonctuelle extends React.Component {
                                                 Date
                                             </label>
                                             <input
-                                                type="date"
+                                                type="date" id="date"
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 placeholder="Email"
                                             />
@@ -85,7 +85,7 @@ export default class CardDepensePonctuelle extends React.Component {
                                                 Somme
                                             </label>
                                             <input
-                                                type="number"
+                                                type="number" id="number"
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 placeholder="ex: 250€"
                                             />
