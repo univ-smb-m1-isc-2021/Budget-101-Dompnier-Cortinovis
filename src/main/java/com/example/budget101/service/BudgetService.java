@@ -45,12 +45,12 @@ public class BudgetService {
 
     public Iterable<Cagnotte> getAllCagnoteByBudget(final Long id) {
         User user = userRepository.findById(id).get();
-        return cagnotteRepository.findAll(); //findByBudget(user.getBudget().getId())
+        return cagnotteRepository.findByBudgetId(user.getBudget().getId());
     }
 
     public Integer sizeCagnottesByBudget(final Long id) {
         int size = 0;
-        for (Cagnotte cagnotte : cagnotteRepository.findByBudget(id)) {
+        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
             size = size + 1;
         }
         return size;
@@ -58,7 +58,7 @@ public class BudgetService {
 
     public Double getTotalCagnotteByBudget(final Long id) {
         Double total = 0.0;
-        for (Cagnotte cagnotte : cagnotteRepository.findByBudget(id)) {
+        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
             total = total + cagnotte.getMontantActuel();
         }
         return total;
@@ -66,7 +66,7 @@ public class BudgetService {
 
     public Double getTotalBudget(final Long id) {
         Double total = 0.0;
-        for (Cagnotte cagnotte : cagnotteRepository.findByBudget(id)) {
+        for (Cagnotte cagnotte : cagnotteRepository.findByBudgetId(id)) {
             total = total + cagnotte.getMontantTT();
         }
         return total;
