@@ -27,10 +27,17 @@ public class BudgetController {
         return budgetService.getAllCagnoteByBudget(idL);
     }
 
-    @GetMapping("/cagnottesTT")
+    @GetMapping("/infoCagnotte")
     @ResponseBody
-    public Double getTotalCagnottes(@RequestParam final Long id) {
-        return budgetService.getTotalCagnotteByBudget(id);
+    public String getTotalCagnottes(@RequestParam final Long id) {
+        Double ttc = budgetService.getTotalCagnotteByBudget(id);
+        int nbC = budgetService.sizeCagnottesByBudget(id);
+        Double ttPm = budgetService.getTotalPm(id);
+        Float compte = budgetService.getTotalCompte(id);
+
+        String res = Double.toString(ttc - ttPm - compte);
+        res = res + Integer.toString(nbC);
+        return res;
     }
 
     @GetMapping("/nbCagnottes")
